@@ -1,6 +1,6 @@
 resource "aws_security_group" "roboshop_sg" {
   name        = var.sg_name[count.index]
-  description = "Security group for ${var.sg_name[count.index]}"
+  description = "Security group for roboshop project"
   vpc_id      = local.vpc_id
 
   egress {
@@ -14,6 +14,6 @@ resource "aws_security_group" "roboshop_sg" {
   tags = merge(local.common_tags,
     var.sg_tags,
     {
-      Name = "${localcommon_name_suffix}-sg"
+      Name = "${local.common_name_suffix}-${var.sg_name[count.index]}"
   })
 }

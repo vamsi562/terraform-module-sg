@@ -4,6 +4,6 @@ locals {
     Environment = var.environment
     Terraform   = true
   }
-  common_name_suffix = "${var.project_name}-${var.environment}-${var.sg_name[count.index]}"
+  common_name_suffix = "${var.project_name}-${var.environment}"
   vpc_id             = data.aws_ssm_parameter.vpc_id.value
 }
