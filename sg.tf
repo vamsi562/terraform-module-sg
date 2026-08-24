@@ -1,7 +1,7 @@
 resource "aws_security_group" "roboshop_sg" {
   name        = var.sg_name
   description = var.description
-  vpc_id      = local.vpc_id
+  vpc_id      = var.vpc_id
 
   egress {
     from_port   = 0
