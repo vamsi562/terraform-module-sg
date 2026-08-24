@@ -1,5 +1,9 @@
 variable "sg_name" {
-  type = list(string)
+  type = string
+}
+
+variable "description" {
+  type = string
 }
 
 # variable "vpc_id" {
