@@ -1,5 +1,6 @@
 resource "aws_security_group" "roboshop_sg" {
-  name        = var.sg_name[count.index]
+  for_each    = toset(var.sg_name)
+  name        = each.value
   description = "Security group for roboshop project"
   vpc_id      = local.vpc_id
 
